@@ -1,0 +1,5 @@
+<resources>
+<string name="app_name">Gold2Zakat </string>
+<string name="copyright">Copyright &#169; 2022 Azhar </string>
+<string name="about_text">This is a simpe demo application to determine the use of menu in Android Studio Application </string>
+</resources>
