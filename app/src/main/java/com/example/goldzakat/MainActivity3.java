@@ -14,8 +14,8 @@ public class MainActivity3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
 
-        float tv = 0, tgv = 0, r=0 , cv = 0, w= 0;
-        double  zp = 0,tz = 0;
+        float total_value = 0, tgv = 0, r=0 , cv = 0, w= 0;
+        double  zakatpayable = 0,totalzakat = 0;
 
         Intent intent = getIntent();
         w = intent.getFloatExtra("weight", 0);
@@ -28,20 +28,20 @@ public class MainActivity3 extends AppCompatActivity {
             tgv = w - 200;
         }
 
-        //total value
-        tv = w * cv;
-        //zakat payable
-        zp = tgv * cv;
-        //total zakat
-        tz = zp * 0.025;
+
+        total_value = w * cv;
+
+        zakatpayable = tgv * cv;
+
+        totalzakat = zakatpayable * 0.025;
 
 
         TextView totalValue = (TextView) findViewById(R.id.totalValue);
         TextView zakatPayable = (TextView) findViewById(R.id.zakatPayable);
         TextView totalZakat = (TextView) findViewById(R.id.totalZakat);
 
-        totalValue.setText("TOTAL VALUE : RM" + tv);
-        zakatPayable.setText("ZAKAT PAYABLE : RM" + zp);
-        totalZakat.setText("TOTAL ZAKAT : RM" + tz);
+        totalValue.setText("TOTAL VALUE : RM" + total_value);
+        zakatPayable.setText("ZAKAT PAYABLE : RM" + zakatpayable);
+        totalZakat.setText("TOTAL ZAKAT : RM" + totalzakat);
     }
 }

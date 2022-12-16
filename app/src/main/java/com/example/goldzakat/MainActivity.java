@@ -2,7 +2,6 @@ package com.example.goldzakat;
 
 import android.content.Intent;
 import android.os.Handler;
-
 import android.os.Bundle;
 
 

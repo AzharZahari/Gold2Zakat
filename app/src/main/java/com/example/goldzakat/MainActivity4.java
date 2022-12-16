@@ -7,13 +7,12 @@ import android.os.Bundle;
 
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity4 extends AppCompatActivity {
 
-    ImageView  ws, link;
+    ImageView  whatsapp, githublink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,20 +20,20 @@ public class MainActivity4 extends AppCompatActivity {
         setContentView(R.layout.activity_main4);
 
 
-        ws = findViewById(R.id.ws);
-        link = findViewById(R.id.link);
+        whatsapp = findViewById(R.id.ws);
+        githublink = findViewById(R.id.link);
 
 
 
 
-        ws.setOnClickListener(new View.OnClickListener() {
+        whatsapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gotoUrl("https://wa.me/60194474485\n");
+                gotoUrl("https://wa.me/60194474485");
             }
         });
 
-        link.setOnClickListener(new View.OnClickListener() {
+        githublink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 gotoUrl("https://github.com/AzharZahari/Gold2Zakat");

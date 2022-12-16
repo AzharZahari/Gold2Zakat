@@ -1,8 +1,6 @@
 package com.example.goldzakat;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,37 +15,59 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity2 extends AppCompatActivity {
+    EditText weight;
+    EditText current;
 
 
-    SharedPreferences sharedPref;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+        weight =(EditText)findViewById(R.id.Weight);
+        current =(EditText)findViewById(R.id.currentValue);
+        RadioGroup x =findViewById(R.id.radioGroup);
+        Button reset=(Button)findViewById(R.id.btnreset);
+        reset.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                weight.setText(" ");
+                current.setText(" ");
+                x.clearCheck();
+
+
+            }
+        });
+
         Button getValue = (Button) findViewById(R.id.getValue);
         getValue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                EditText Weight = (EditText) findViewById(R.id.Weight);
-                float w = Float.parseFloat(Weight.getText().toString());
-
-                RadioGroup rg = (RadioGroup) findViewById(R.id.radioGroup);
                 RadioButton Keep = (RadioButton) findViewById(R.id.Keep);
                 RadioButton Wear = (RadioButton) findViewById(R.id.Wear);
 
-                EditText currentValue = (EditText) findViewById(R.id.currentValue);
-                float cv = Float.parseFloat(currentValue.getText().toString());
 
-                if (w == 0) {
+                Float w = null;
+                try{
+                    w = new Float(weight.getText().toString());
+                }catch(Exception ignore){
                     Toast.makeText(MainActivity2.this, "please fill the weight", Toast.LENGTH_LONG).show();
-                } else if (!Keep.isChecked() && !Wear.isChecked()) {
-                    Toast.makeText(MainActivity2.this, "please select the types", Toast.LENGTH_LONG).show();
-                } else if (cv == 0) {
-                    Toast.makeText(MainActivity2.this, "please fill the current value", Toast.LENGTH_LONG).show();
                 }
+
+                Float cv = null;
+                try{
+                    cv = new Float(current.getText().toString());
+                }catch(Exception ignore){
+                    Toast.makeText(MainActivity2.this, "please fill the weight", Toast.LENGTH_LONG).show();
+                }
+
+
 
                 float checked = 0;
                 if (Keep.isChecked()) {
@@ -56,7 +76,9 @@ public class MainActivity2 extends AppCompatActivity {
                     checked = 2;
                 }
 
-                //pas value
+
+
+
                 Intent intent = new Intent(getApplicationContext(), MainActivity3.class);
                 intent.putExtra("weight", w);
                 intent.putExtra("checked", checked);
@@ -65,6 +87,10 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
     }
+
+
+
+
 
 
     public boolean onCreateOptionsMenu(Menu menu) {
