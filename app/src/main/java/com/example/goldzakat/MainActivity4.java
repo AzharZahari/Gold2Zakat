@@ -43,7 +43,8 @@ public class MainActivity4 extends AppCompatActivity {
         link.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gotoUrl("");
+                gotoUrl("https://github.com/AzharZahari/Gold2Zakat
+");
             }
         });
 
