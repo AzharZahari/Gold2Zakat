@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity3 extends AppCompatActivity {
+public class output extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

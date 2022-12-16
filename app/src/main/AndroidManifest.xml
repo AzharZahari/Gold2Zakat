@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
         <activity
-            android:name=".MainActivity4"
+            android:name=".about"
             android:parentActivityName=".MainActivity"/>
         <activity
-            android:name=".MainActivity3"
-            android:parentActivityName=".MainActivity2" />
+            android:name=".output"
+            android:parentActivityName=".input" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".input"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"

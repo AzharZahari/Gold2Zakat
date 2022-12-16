@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity2 extends AppCompatActivity {
+public class input extends AppCompatActivity {
     EditText weight;
     EditText current;
 
@@ -57,14 +57,14 @@ public class MainActivity2 extends AppCompatActivity {
                 try{
                     w = new Float(weight.getText().toString());
                 }catch(Exception ignore){
-                    Toast.makeText(MainActivity2.this, "please fill the weight", Toast.LENGTH_LONG).show();
+                    Toast.makeText(input.this, "please fill the weight", Toast.LENGTH_LONG).show();
                 }
 
                 Float cv = null;
                 try{
                     cv = new Float(current.getText().toString());
                 }catch(Exception ignore){
-                    Toast.makeText(MainActivity2.this, "please fill the weight", Toast.LENGTH_LONG).show();
+                    Toast.makeText(input.this, "please fill the weight", Toast.LENGTH_LONG).show();
                 }
 
 
@@ -79,7 +79,7 @@ public class MainActivity2 extends AppCompatActivity {
 
 
 
-                Intent intent = new Intent(getApplicationContext(), MainActivity3.class);
+                Intent intent = new Intent(getApplicationContext(), output.class);
                 intent.putExtra("weight", w);
                 intent.putExtra("checked", checked);
                 intent.putExtra("currentValue", cv);
@@ -104,7 +104,7 @@ public class MainActivity2 extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.about:
                 //page link
-                Intent i = new Intent(this, MainActivity4.class);
+                Intent i = new Intent(this, about.class);
                 startActivity(i);
 
                 break;

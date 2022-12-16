@@ -10,7 +10,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity4 extends AppCompatActivity {
+public class about extends AppCompatActivity {
 
     ImageView  whatsapp, githublink;
 
